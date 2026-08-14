@@ -1,24 +1,32 @@
+const { App } = require("@slack/bolt");
 require("dotenv").config();
 
-const { App } = require("@slack/bolt");
+const app = new App({token: process.env.SLACK_BOT_TOKEN, appToken: process.env.SLACK_APP_TOKEN, socketMode: true});
+const fs = require("fs");
+const path = require("path");
+const commandsPath = path.join(__dirname, "commands");
 
-const animalCommands = require("./commands/animals");
-const spaceCommands = require("./commands/space");
-const utilityCommands = require("./commands/utility");
+for(const file of fs.readdirSync(commandsPath)){
+    if(!file.endsWith(".js")){
+        continue;
+    }
+    const command = require(path.join(commandsPath, file));
+    command(app);
+    console.log(`🐟 ${file} carregado`);
+}
 
-const app = new App({
-    token: process.env.SLACK_BOT_TOKEN,
-    appToken: process.env.SLACK_APP_TOKEN,
-    socketMode: true
-});
-
-animalCommands(app);
-spaceCommands(app);
-utilityCommands(app);
-
-app.command("/koi-ping", async ({ command, ack, respond }) => {
+app.command("/koi-ping", async ({command, ack, respond}) =>{
     await ack();
     await respond("🏓 Pong!");
+})
+
+app.command("/koi-say", async({command, ack, respond}) =>{
+    await ack();
+    const texto = command.text;
+    if(!texto.trim()){
+        return await respond("Hey, you need to write something, duh!\n*Example:*\n`/koi-say Hello`");
+    }
+    await respond(`Echo: ${texto}`);
 });
 
 (async () => {
