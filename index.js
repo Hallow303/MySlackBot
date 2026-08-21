@@ -12,7 +12,7 @@ for(const file of fs.readdirSync(commandsPath)){
     }
     const command = require(path.join(commandsPath, file));
     command(app);
-    console.log(`🐟 ${file} carregado`);
+    console.log(`🐟 ${file} loaded`);
 }
 
 app.command("/koi-ping", async ({command, ack, respond}) =>{
