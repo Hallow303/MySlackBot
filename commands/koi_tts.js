@@ -27,4 +27,4 @@ module.exports = (app) =>{
             await client.chat.update({channel: command.channel_id, ts: loading.ts, text:"Couldn't generate the audio"});
         }
     })
-}
+};
