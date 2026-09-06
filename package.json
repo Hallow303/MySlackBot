@@ -13,6 +13,7 @@
   "dependencies": {
     "@slack/bolt": "^5.0.0",
     "axios": "^1.19.0",
+    "canvas": "^3.2.3",
     "dotenv": "^17.4.2",
     "node-edge-tts": "^1.2.10"
   }
