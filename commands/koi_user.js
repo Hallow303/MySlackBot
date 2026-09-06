@@ -116,7 +116,7 @@ async function createUserCard(data) {
     ctx.drawImage(avatar, 70, 90, 450, 450);
     ctx.restore();
 
-    ctx.font = 'bold 55px "Segoe UI"';
+    ctx.font = 'bold 55px "DejaVu Sans"';
     ctx.fillStyle = "white";
 
     const x = 160;
@@ -137,7 +137,7 @@ async function createUserCard(data) {
     ctx.fillText(status,520,710 + r);
     ctx.fillText(timezone,260,950 + r);
 
-    ctx.font = 'bold 40px "Segoe UI"';
+    ctx.font = 'bold 40px "DejaVu Sans"';
     const s = 30;
 
 
