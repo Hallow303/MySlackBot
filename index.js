@@ -56,7 +56,7 @@ app.command("/koi-help", async ({ command, ack, respond }) => {
                 "`/koi-coin` — Heads or tails.\n" +
                 "`/koi-help` — Lists all available Koi commands.\n" +
                 "`/koi-bot` — Shows Koizinho's information.\n" +
-                "`/koi-bot` — View detailed information about a Slack user."
+                "`/koi-user` — View detailed information about a Slack user."
         }}]
     });
 });
