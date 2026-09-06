@@ -26,7 +26,7 @@ A Slack bot with a variety of fun and useful commands.
 | `/koi-user`   | View detailed information about a Slack user.               |
 
 > [!TIP]
-> Demostração dos comandos [DEMO](demo.md)
+> Demonstration of the commands [DEMO](demo.md)
 
 ## Try My Bot
 
