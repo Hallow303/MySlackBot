@@ -23,7 +23,7 @@ A Slack bot with a variety of fun and useful commands.
 | `/koi-coin`  | Heads or tails.                                             |
 | `/koi-help`  | Lists all available Koi commands.                           |
 | `/koi-bot`   | Shows Koizinho's information.                               |
-| `/koi-bot`   | View detailed information about a Slack user.               |
+| `/koi-user`   | View detailed information about a Slack user.               |
 
 > [!TIP]
 > Demostração dos comandos [DEMO](demo.md)
