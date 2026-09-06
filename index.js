@@ -119,6 +119,15 @@ app.command("/koi-coin", async({command, ack, respond}) =>{
     }
 });
 
+app.command("/koi-say", async ({ command, ack, respond }) => {
+    await ack();
+    const texto = command.text.trim();
+    if (!texto) {
+        return await respond({response_type: "ephemeral", text: "❌ Please write something!\nExample: `/koi-say Hello`"});
+    }
+    await respond({text: `Echo: ${texto}`});
+});
+
 app.command("/koi-rps", async ({ command, ack, respond }) =>{
     await ack();
     const rps = ["rock", "paper", "scissors"];
